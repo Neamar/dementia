@@ -24,11 +24,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.9597979"
-     inkscape:cx="362.35205"
-     inkscape:cy="822.29587"
+     inkscape:zoom="0.98994948"
+     inkscape:cx="244.28037"
+     inkscape:cy="727.35964"
      inkscape:document-units="mm"
-     inkscape:current-layer="g4564"
+     inkscape:current-layer="g4572"
      showgrid="false"
      inkscape:window-width="1855"
      inkscape:window-height="1056"
@@ -55,11 +55,13 @@
     var primaryGear;
     var secondaryGear;
     var transmitter;
+    var hourHand;
 
     function start(evt) {
       primaryGear = evt.target.ownerDocument.getElementById(&quot;primary_gear&quot;);
       secondaryGear = evt.target.ownerDocument.getElementById(&quot;secondary_gear&quot;);
       transmitter = evt.target.ownerDocument.getElementById(&quot;transmitter&quot;);
+      hourHand = evt.target.ownerDocument.getElementById(&quot;hour_hand&quot;);
       animate();
 
       // Refresh every second.
@@ -81,6 +83,8 @@
       // rotation of the second wheel + space between teeths
       var secondaryTheta = thetaDegree * n + (2 * 360 / t) + 1;
       secondaryGear.setAttribute(&quot;transform&quot;, &quot;translate(&quot; + x + &quot;,&quot; + y + &quot;) rotate( &quot; + secondaryTheta + &quot;)&quot;);
+
+      hourHand.setAttribute(&quot;transform&quot;, &quot;translate(&quot; + x + &quot;,&quot; + y + &quot;) rotate( &quot; + secondaryTheta + &quot;)&quot;);
 
       transmitter.setAttribute(&quot;transform&quot;, &quot;rotate(&quot; + (thetaDegree + 1) + &quot;, &quot; + cX + &quot;,&quot; + cY + &quot;)&quot;);
     }
@@ -176,34 +180,33 @@
          id="path5526" />
     </g>
     <g
-       id="g4564">
+       id="hour_hand">
       <g
-         id="g4572"
-         transform="translate(70.714103,6.5654238)">
+         id="g4511">
         <circle
            r="10"
-           cy="91.501137"
-           cx="176.76814"
            id="path4496"
-           style="fill:#8800aa;fill-opacity:1;stroke:none;stroke-width:0.54243803" />
+           style="fill:#8800aa;fill-opacity:1;stroke:none;stroke-width:0.54243803"
+           cx="0"
+           cy="0" />
         <circle
            r="20"
-           cy="57.691532"
-           cx="176.76814"
+           cy="-30"
            id="path4496-3"
-           style="fill:#8800aa;fill-opacity:1;stroke:none;stroke-width:1.08487606" />
+           style="fill:#8800aa;fill-opacity:1;stroke:none;stroke-width:1.08487606"
+           cx="0" />
         <rect
-           y="70.497864"
-           x="170.75458"
-           height="20.579754"
-           width="12.027128"
+           y="-20"
+           x="-5"
+           height="20"
+           width="10"
            id="rect4513"
            style="fill:#8800aa;fill-opacity:1;stroke:none;stroke-width:0.52916664" />
         <path
            id="path4535"
            inkscape:label="Triangle"
            style="fill:#8800aa;fill-opacity:1;stroke:none;stroke-width:0.65499479"
-           d="m 163.08088,50.537686 h 27.37453 L 176.76814,16.606457 Z"
+           d="m -13.687265,-41.937571 h 27.37453 L -4.8e-6,-75.8688 Z"
            inkscape:connector-curvature="0" />
       </g>
     </g>
