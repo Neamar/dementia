@@ -7,14 +7,14 @@ Let's define:
 * `θ` as the current radian angle on a 12-hour clock (at 6, θ=π; at 3, θ=π/2)
 * `n` as the number of rotations from the secondary gear on one revolution over the main gear (related to the gears ratio)
 
-### Main gear wheel
+### Primary gear wheel
 Static with regard to the watch,
 
 * Radius (mid-teeth): `R`
 * Number of teeths: `T`
 
 ### Secondary gear wheel
-Rotates over the main cogwheel,
+Rotates over the primary cogwheel,
 At θ = 0, the cogs must align with the main gear wheel.
 
 * Radius (mid-teeth): `r` (radius has to be `R/n`)
@@ -45,8 +45,8 @@ An [epitrochoid](https://en.wikipedia.org/wiki/Epitrochoid) of parameters `(R, r
 > To get started, we'll use the following values:
 > 
 > * `n=6`
-> * `R=90`
-> * `r=15`
+> * `R=240`
+> * `r=40`
 > * `T=150`
 > * `t=30`
 > * `d=25`
