@@ -54,14 +54,12 @@
     var secondaryGear;
     var transmitter;
     var hourHand;
-    var bubble;
 
     function start(evt) {
       primaryGear = evt.target.ownerDocument.getElementById(&quot;primary_gear&quot;);
       secondaryGear = evt.target.ownerDocument.getElementById(&quot;secondary_gear&quot;);
       transmitter = evt.target.ownerDocument.getElementById(&quot;transmitter&quot;);
       hourHand = evt.target.ownerDocument.getElementById(&quot;hour_hand&quot;);
-      bubble = evt.target.ownerDocument.getElementById(&quot;bubble&quot;);
       animate();
 
       // Refresh every second.
