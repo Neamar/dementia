@@ -11,12 +11,14 @@ Let's define:
 Static with regard to the watch,
 
 * Radius (mid-teeth): `R`
+* Number of teeths: `T`
 
 ### Secondary gear wheel
 Rotates over the main cogwheel,
 At θ = 0, the cogs must align with the main gear wheel.
 
 * Radius (mid-teeth): `r` (radius has to be `R/n`)
+* Number of teeths: `t` (`t` has to be `T/n`)
 
 Position:
 
@@ -39,6 +41,15 @@ Position:
 
 ### Ribbon
 An [epitrochoid](https://en.wikipedia.org/wiki/Epitrochoid) of parameters `(R, r, d)`.
+
+> To get started, we'll use the following values:
+> 
+> * `n=6`
+> * `R=90`
+> * `r=15`
+> * `T=150`
+> * `t=30`
+> * `d=25`
 
 ## Inspiration / Credits
 When I was younger, I saw this watch from "haut horloger" Pierre Kunz.
