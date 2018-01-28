@@ -32,10 +32,12 @@
 
     var primaryGear;
     var secondaryGear;
+    var transmitter;
 
     function start(evt) {
       primaryGear = evt.target.ownerDocument.getElementById(&quot;primary_gear&quot;);
       secondaryGear = evt.target.ownerDocument.getElementById(&quot;secondary_gear&quot;);
+      transmitter = evt.target.ownerDocument.getElementById(&quot;transmitter&quot;);
       animate();
 
       // Refresh every second.
@@ -51,13 +53,14 @@
       var s = date.getSeconds() + date.getMilliseconds() / 1000;
       var thetaDegree = s / 60 * 360;
       var thetaRadian = (thetaDegree / 360) * TPI;
-      var x = cX + (R + r) * Math.cos(thetaRadian);
-      var y = cY + (R + r) * Math.sin(thetaRadian);
+      var x = cX + (R + r) * Math.cos(thetaRadian - Math.PI / 2);
+      var y = cY + (R + r) * Math.sin(thetaRadian - Math.PI / 2);
 
       // rotation of the second wheel + space between teeths
       var secondaryTheta = thetaDegree * n + (2 * 360 / t) + 1;
       secondaryGear.setAttribute(&quot;transform&quot;, &quot;translate(&quot; + x + &quot;,&quot; + y + &quot;) rotate( &quot; + secondaryTheta + &quot;)&quot;);
 
+      transmitter.setAttribute("transform", "rotate(" + (thetaDegree + 1) + ", " + cX + "," + cY + ")");
     }
 
     window.animate = animate
@@ -142,11 +145,6 @@
          id="path4504"
          style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332" />
     </g>
-    <path
-       style="fill:#dbe36d;fill-opacity:1;stroke:none;stroke-width:0.24257423"
-       d="m 247.48205,81.456526 a 17.499999,17.499999 0 0 0 -17.48472,17.073375 h 2.50631 a 14.999999,14.999999 0 0 1 14.97841,-14.573269 14.999999,14.999999 0 0 1 14.98513,14.573269 h 2.4939 A 17.499999,17.499999 0 0 0 247.48205,81.456526 Z"
-       id="path5412-2"
-       inkscape:connector-curvature="0" />
     <g
        id="transmitter"
        inkscape:label="transmitter">
