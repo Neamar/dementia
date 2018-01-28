@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -13,9 +12,42 @@
    height="500mm"
    viewBox="0 0 500 500"
    version="1.1"
-   id="svg5129"
+   id="watch"
+   onload="start(evt)"
    inkscape:version="0.92.1 r15371"
    sodipodi:docname="poc.svg">
+
+   <script
+     type="text/ecmascript"
+     id="animation">
+
+    var R =
+    var primaryGear;
+    var secondaryGear;
+
+    function start(evt) {
+      primaryGear = evt.target.ownerDocument.getElementById("primary_gear");
+      secondaryGear = evt.target.ownerDocument.getElementById(&quot;secondary_gear&quot;);
+      animate();
+
+      // Refresh every second.
+      setInterval(animate, 1000);
+    }
+
+    function animate() {
+
+      // Get computer clock time
+      var date = new Date();
+      var s = date.getSeconds();
+      var theta = (s / 60) * 360;
+      var x =
+
+      secondaryGear.setAttribute("transform", "rotate( " + theta + ", 0, 0)");
+
+    }
+
+    window.animate = animate
+  </script>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -55,10 +87,9 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(22.310728,223.03435)">
+     id="layer1">
     <g
-       transform="translate(227.68931,26.96565)"
+       transform="translate(250, 250)"
        inkscape:label="Primary gear"
        id="primary_gear"
        style="fill:#000000;fill-opacity:1">
@@ -72,7 +103,7 @@
        id="secondary_gear"
        inkscape:label="Secondary Gear"
        transform="rotate(-6.0160568,-1078.1578,-2229.1136)"
-       style="fill:#e3dedb;image-rendering:auto">
+       style="fill:#e3dedb">
       <path
          id="path5150"
          style="fill:#e3dedb;stroke:#000000;stroke-width:0.26458332"
