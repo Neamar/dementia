@@ -10,7 +10,6 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="500mm"
    height="500mm"
-   viewBox="0 0 500 500"
    version="1.1"
    id="watch"
    onload="start(evt)"
@@ -21,7 +20,11 @@
      type="text/ecmascript"
      id="animation">
 
-    var R =
+    var R = 126;
+    var r = 26;
+    var cX = 250;
+    var cY = 250;
+
     var primaryGear;
     var secondaryGear;
 
@@ -31,18 +34,22 @@
       animate();
 
       // Refresh every second.
-      setInterval(animate, 1000);
+      setInterval(animate, 100);
     }
 
+    var counter = 0;
     function animate() {
 
       // Get computer clock time
       var date = new Date();
-      var s = date.getSeconds();
-      var theta = (s / 60) * 360;
-      var x =
 
-      secondaryGear.setAttribute("transform", "rotate( " + theta + ", 0, 0)");
+      var s =  date.getSeconds() + date.getMilliseconds() / 1000;
+      var thetaDegree = s * 6;
+      var thetaRadian = (thetaDegree / 360) * 2 * Math.PI;
+      var x = cX + (R + r) * Math.cos(thetaRadian);
+      var y = cY + (R + r) * Math.sin(thetaRadian);
+
+      secondaryGear.setAttribute("transform", "translate(" + x + "," + y + ") rotate( " + thetaDegree + ")");
 
     }
 
@@ -102,7 +109,7 @@
     <g
        id="secondary_gear"
        inkscape:label="Secondary Gear"
-       transform="rotate(-6.0160568,-1078.1578,-2229.1136)"
+       transform=""
        style="fill:#e3dedb">
       <path
          id="path5150"
