@@ -1,7 +1,9 @@
 # Dementia project
 An epitrochoid watch.
 
-![Proof Of Concept](http://bacconnier.fr/dementia/components/poc.svg)
+[![Proof Of Concept](/components/poc.svg)](http://bacconnier.fr/dementia/components/poc.svg)
+
+<small>(click to see the animated version)</small>
 
 ## Components
 Let's define:
