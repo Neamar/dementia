@@ -45,21 +45,16 @@
       animate();
 
       // Refresh every second.
-      // setInterval(animate, 100);
+      setInterval(animate, 100);
     }
 
-    var counter = 0;
-    var points = [];
-
-    var counter = 0;
     function animate() {
 
       // Get computer clock time
       var date = new Date();
 
-      var s = counter; // date.getSeconds() + date.getMilliseconds() / 1000;
-      counter += 1;
-      var thetaDegree = s / 300 * 360;
+      var s = date.getSeconds() + date.getMilliseconds() / 1000;
+      var thetaDegree = s / 60 * 360;
       var thetaRadian = (thetaDegree / 360) * TPI;
       var x = cX + (R + r) * Math.cos(thetaRadian - Math.PI / 2);
       var y = cY + (R + r) * Math.sin(thetaRadian - Math.PI / 2);
@@ -72,16 +67,6 @@
       hourHand.setAttribute(&quot;transform&quot;, &quot;translate(&quot; + x + &quot;,&quot; + y + &quot;) rotate( &quot; + hourTheta + &quot;)&quot;);
 
       transmitter.setAttribute(&quot;transform&quot;, &quot;rotate(&quot; + (thetaDegree + 1) + &quot;, &quot; + cX + &quot;,&quot; + cY + &quot;)&quot;);
-
-      var rect = bubble.getBoundingClientRect();
-      points.push((rect.x + rect.height / 2).toFixed(2) + " " + (rect.y + rect.width / 2).toFixed(2));
-
-      if(counter === 300) {
-        console.log(points.join(" L "));
-      }
-      if(counter &lt; 300) {
-        animate();
-      }
     }
 
     window.animate = animate
@@ -204,12 +189,6 @@
            style="fill:#8800aa;fill-opacity:1;stroke:none;stroke-width:0.33694607"
            inkscape:label="Triangle"
            id="path4535" />
-        <circle
-           cx="0"
-           style="fill:#8800ff;fill-opacity:1;stroke:none;stroke-width:1.08487606"
-           id="bubble"
-           cy="-65"
-           r="2" />
       </g>
     </g>
   </g>
